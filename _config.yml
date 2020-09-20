@@ -1,0 +1,64 @@
+# Site Info
+title: 記録
+tagline: 'kool8'
+description: 'Wannabe Gopher, Pythonist, Security Engineer, BackEnd Etc..'
+baseurl: ""
+url: http://127.0.0.1:4000/
+logo: '/public/img/run.gif'
+
+plugins: [jekyll-paginate]
+# Site configurations
+gems:
+  - jekyll-paginate
+markdown: kramdown
+kramdown:
+  input: GFM
+excerpt_separator: "<!-- more -->"
+sass:
+  style: compressed
+  sass_dir: _scss    
+paginate: 2
+paginate_path: '/blog/page:num'
+permalink: pretty
+
+version: 1.0.0
+
+# About/contact
+author:
+  name: Cubby
+  description: Wannabe <strong>Gopher, Pythonist, Security Engineer, BackEnd </strong>Etc..
+  gravatar: http://github.com/leesh0.png # md5 hash of your email address
+  contact:
+    linkedin:  https://www.linkedin.com/in/lizhihao
+    github:    https://github.com/kool-8
+    # facebook:  <hide>
+    twitter:   https://twitter.com/atto_whicker
+    # weibo:     http://weibo.com/41173780
+    email:     http://www.google.com/recaptcha/mailhide/d?k=01I3lZFiZYng9N3QxYEtsDaQ==&c=31wAnZkuKqcG0ATAqJN8Z3ln5kkYLA9TwkGc-IbygpM=
+
+# Navigation (2nd level links supported)
+nav:
+  Home:           
+    - '/blog'
+  Blog:           
+    - '/'
+    - { Categories: '/blog/categories/' }
+    - { Tags: '/blog/tags/' }
+  About:          
+    - '/about/'
+  Github Project: 
+    - 'http://leesh0.github.io/'
+
+# Where are tags and categories displayed
+tag_page: '/blog/tags/'
+category_page: '/blog/categories/'
+
+hero:
+  image: /public/img/we_will_be_giants_by_yalestewart.jpg
+  caption: Original Artwork &copy; <a href="http://yalestewart.deviantart.com/art/We-Will-Be-Giants-370176475">Yale Stewart</a>
+
+# Puglins
+mathjax: true # whether support mathjax
+google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google analytics
+disqus_short_name:  # leave blank if you don't want disqus
+
