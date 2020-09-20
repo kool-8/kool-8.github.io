@@ -18,3 +18,5 @@ fields:
   config:
     required: false
   label: categories
+pages:
+- _posts/Django/django-query-with-multiple-q-conditions-with-iterators.md
