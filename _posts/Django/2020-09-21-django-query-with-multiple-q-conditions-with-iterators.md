@@ -104,7 +104,7 @@ elif search_type == 'title':
 이때, list를 조건식으로 변경해주는 위의 방법들을 사용하면 아래와 같이 간단하게 구현 가능해지며 type의 수가 많아져도 따로 수정할 코드가 많이 없다.
 
 ```python
-search_q = self.request.GET.get('search_q')
+		search_q = self.request.GET.get('search_q')
         search_types = self.request.GET.get('search_type').split('|')  # title|body|tags
         allowed_search_types = ['title', 'body', 'tags']
         conditions = [Q(**{f'{field}__icontains': search_q}) for field in search_types
