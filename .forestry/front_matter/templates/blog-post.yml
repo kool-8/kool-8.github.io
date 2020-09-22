@@ -19,4 +19,4 @@ fields:
     required: false
   label: categories
 pages:
-- _posts/Django/django-query-with-multiple-q-conditions-with-iterators.md
+- _posts/Django/django-django-model-signal.md
