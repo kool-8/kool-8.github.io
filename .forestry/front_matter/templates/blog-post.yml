@@ -20,3 +20,4 @@ fields:
   label: categories
 pages:
 - _posts/Django/django-django-model-signal.md
+- _posts/Django/django-typeerror-argument-of-type-posixpath-is-not-iterable.md
