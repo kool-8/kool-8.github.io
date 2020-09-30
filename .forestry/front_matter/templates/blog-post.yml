@@ -14,9 +14,19 @@ fields:
   default: []
   label: tags
 - name: categories
-  type: text
+  type: select
+  default: []
   config:
     required: false
+    options:
+    - Django
+    - Go
+    - Python
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
   label: categories
 pages:
 - _posts/Django/django-django-model-signal.md
