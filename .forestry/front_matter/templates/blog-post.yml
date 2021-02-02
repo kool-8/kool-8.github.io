@@ -31,3 +31,4 @@ fields:
 pages:
 - _posts/Django/django-django-model-signal.md
 - _posts/Django/django-typeerror-argument-of-type-posixpath-is-not-iterable.md
+- _posts/vscode-when-prettier-not-working-on-vscode.md
