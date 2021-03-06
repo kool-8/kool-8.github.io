@@ -6,25 +6,46 @@
 html,
 body {
   overflow-x: hidden;
+  background-color: #1f1f1f;
+  color: #cac3c3;
+}
+@media (max-width: 30.1em) {
+  .content {
+    padding-top: 3.5rem;
+  }
 }
 
 html {
   font-family: $font-serif;
   text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust:100%;
-  -ms-text-size-adjust:100%;
-  text-rendering:optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $font-sans;
   font-weight: 400;
   color: $title-color;
-  letter-spacing: -.025rem;
+  letter-spacing: -0.025rem;
 }
 
 code {
-  color: #666;
+  color: $theme-color;
+  background-color: #141414;
+}
+
+pre {
+  background-color: #141414;
+}
+
+hr {
+  color: #141414;
 }

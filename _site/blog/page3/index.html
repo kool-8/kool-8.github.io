@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Blog &middot; Biary
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/main.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/favicon.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  
+  <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"> </script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });
+  </script>
+  
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <div class="sidebar-personal-info">
+      <div class="sidebar-personal-info-section">
+        <a href="http://github.com/kool-8">
+          <img src="http://github.com/kool-8.png" title="View on Github" alt="View on Gravatar" />
+        </a>
+      </div>
+      <div class="sidebar-personal-info-section">
+        <p>interested in BlockChain, Go, Backend</p>
+      </div>
+      
+      
+      
+      <div class="sidebar-personal-info-section">
+        <p> Follow me:
+          
+          
+          
+          <a href="https://github.com/kool-8">
+            <i class="fa fa-github" aria-hidden="true"></i>
+          </a>
+          
+          |
+          
+          
+          
+          <a href="https://twitter.com/atto_whicker">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </a>
+          
+          |
+          
+          
+          
+          <a href="notedev.jp@gmail.com">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </a>
+          
+          
+          
+        </p>
+      </div>
+      
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    
+    
+    
+    
+
+    
+
+    <span class="">
+      <a class="sidebar-nav-item " href="/blog">
+        Home
+      </a>
+      
+    </span>
+
+    
+    
+    
+    
+
+    
+
+    <span class="foldable">
+      <a class="sidebar-nav-item " href="/">
+        Blog
+      </a>
+      
+      
+
+      <a class="sidebar-nav-item sidebar-nav-item-sub "
+        href="/blog/categories/#game" class="post-tag">
+        <i class="fa fa-terminal" aria-hidden="true"></i> GAME</a>
+      
+
+      <a class="sidebar-nav-item sidebar-nav-item-sub "
+        href="/blog/categories/#django" class="post-tag">
+        <i class="fa fa-terminal" aria-hidden="true"></i> Django</a>
+      
+
+      <a class="sidebar-nav-item sidebar-nav-item-sub "
+        href="/blog/categories/#error" class="post-tag">
+        <i class="fa fa-terminal" aria-hidden="true"></i> Error</a>
+      
+      
+    </span>
+
+    
+    
+    
+    
+
+    
+
+    <span class="">
+      <a class="sidebar-nav-item " href="/about/">
+        About
+      </a>
+      
+    </span>
+
+    
+    
+    
+    
+
+    
+
+    <span class="">
+      <a class="sidebar-nav-item " href="http://leesh0.github.io/">
+        Github Project
+      </a>
+      
+    </span>
+
+    
+
+    <span class="sidebar-nav-item">Currently v1.0.0</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2021 Kool8. This work is liscensed under <a
+        href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.
+    </p>
+  </div>
+
+  <div class="sidebar-item">
+    <p>
+      Powered by <a href="http://jekyllrb.com">jekyll</a> and <a href="http://codinfox.github.io">codinfox-lanyon</a>
+    </p>
+  </div>
+</div>
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home" title="Biary">
+              <img class="masthead-logo" src="/public/img/run.gif"/>
+            </a>
+            <small>kool8</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title" style="font-size:1.3rem">
+      <a href="/django/2020/09/22/django-django-model-signal/">
+        [django] django model signal 
+      </a>
+    </h1>
+
+    <span class="post-date">22 Sep 2020</span>
+     |
+    
+    <a href="/blog/tags/#django" class="post-tag">django</a>
+    
+    <a href="/blog/tags/#python" class="post-tag">python</a>
+    
+    <a href="/blog/tags/#signal" class="post-tag">signal</a>
+    
+    <a href="/blog/tags/#drf" class="post-tag">drf</a>
+    
+    
+
+    <article>
+      <h1 id="django-django-model-signal">[django] django model signal</h1>
+
+<p>장고의 model signal은 모델이 저장될때 컨트롤 할 수 있게 도와주는 기능으로 간단하게 생각하면 hooking을 생각하면 된다.</p>
+
+<p>대표적인 사용예로는 사용자에게 특정 행동이 발생되었을때 알림을 가게 하는 기능을 구현 할 수가 있다.</p>
+
+<p>우선, 장고의 signal에는 8가지의 기본 내장 시그널이 존재하며 시그널을 사용자가 직접 커스터 마이징 하여 사용하는것도 가능하다.</p>
+
+<h2 id="siganl의-종류">siganl의 종류</h2>
+
+<p><strong><code class="language-plaintext highlighter-rouge">django.db.models.signals</code></strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>시그널명</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">pre_init</code></td>
+      <td>django에서 model클래스의 <code class="language-plaintext highlighter-rouge">__init__()</code> 메소드가 실행될때의 시그널</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">post_init</code></td>
+      <td>django에서 model클래스의 <code class="language-plaintext highlighter-rouge">__init__()</code>메소드의 실행이 종료된 후 의 시그널</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">pre_save</code></td>
+      <td>django에서 model클래스의 <code class="language-plaintext highlighter-rouge">save()</code>메소드가 시작되는 지점의 시그널</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">post_save</code></td>
+      <td>django에서 model클래스의 <code class="language-plaintext highlighter-rouge">save()</code>메소드가 종료되는 지점의 시그널</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">pre_delete</code></td>
+      <td>django에서 model클래스의 <code class="language-plaintext highlighter-rouge">delete()</code>와 queryset의 <code class="language-plaintext highlighter-rouge">delete()</code>메소드가 시작되는 지점의 시그널</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">post_delete</code></td>
+      <td>django에서 model클래스의 <code class="language-plaintext highlighter-rouge">delete()</code>와 queryset의 <code class="language-plaintext highlighter-rouge">delete()</code>메소드가 종료되는 지점의 시그널</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">m2m_changed</code></td>
+      <td>ManyToMany필드의 값이 변경될때 보내지는 시그널. <a href="https://docs.djangoproject.com/en/3.1/ref/signals/#m2m-changed">자세히</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">class_prepared</code></td>
+      <td>django에서 model클래스가 준비됬을경우의 시그널 일반적으로 서드파티앱에서는 사용하지 않는다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="signal-적용하기">signal 적용하기</h2>
+
+<p>먼저, django의 manage.py로 startapp을 통해 app을 만들었다면 파일의 구조는 다음과 같을것이다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>app
+├── __init__.py
+├── admin.py
+├── apps.py
+├── migrations
+│   └── __init__.py
+├── models.py
+└── views.py
+</code></pre></div></div>
+
+<p>여기서 <code class="language-plaintext highlighter-rouge">receivers.py</code>나 혹은 <code class="language-plaintext highlighter-rouge">signals.py</code>를 생성하여 원하는 시그널을 작성해준다.</p>
+
+<p><strong>Example)</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.db.models.signals</span> <span class="kn">import</span> <span class="n">post_save</span>
+<span class="kn">from</span> <span class="nn">django.dispatch</span> <span class="kn">import</span> <span class="n">receiver</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Board</span>
+
+<span class="o">@</span><span class="n">receiver</span><span class="p">(</span><span class="n">post_save</span><span class="p">,</span> <span class="n">sender</span><span class="o">=</span><span class="n">Board</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">BoardCreated</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">notice</span> <span class="o">=</span> <span class="s">f'</span><span class="si">{</span><span class="n">instance</span><span class="p">.</span><span class="n">author</span><span class="si">}</span><span class="s">님이 새로운 게시글을 게시하였습니다.'</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">notice</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>다음으로는 이제 시그널을 django에 등록해줘야 한다. apps.py의 내용을 다음과 같이 바꿔주자.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.apps</span> <span class="kn">import</span> <span class="n">AppConfig</span>
+
+
+<span class="k">class</span> <span class="nc">Your_App_Config</span><span class="p">(</span><span class="n">AppConfig</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s">'your_app_name'</span>
+    <span class="k">def</span> <span class="nf">ready</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>	<span class="c1"># from here
+</span>        <span class="kn">import</span> <span class="nn">your_app_name.signals</span>
+
+</code></pre></div></div>
+
+<p>다음으로는 default App Config를 설정해주어야 한다. 생성한 app의 텅 빈 <code class="language-plaintext highlighter-rouge">__init__.py</code>파일을 열어 방금 설정한 AppConfig클래스를 default로 설정해준다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">default_app_config</span> <span class="o">=</span> <span class="s">'your_app_name.apps.Your_App_Config'</span>
+</code></pre></div></div>
+
+<p>장고를 재실행해주면 끝이난다.</p>
+
+<p>끝.</p>
+
+      <article>
+        <div class="post-more">
+          
+          <a href="/django/2020/09/22/django-django-model-signal/#disqus_thread"> <i class="fa fa-comments"
+              aria-hidden="true"></i>Comment</a>&nbsp;
+          
+          <a href="/django/2020/09/22/django-django-model-signal/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+        </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title" style="font-size:1.3rem">
+      <a href="/django/2020/09/21/django-query-with-multiple-q-conditions-with-iterators/">
+        [django] queryset Multiple Q conditions with Iterators
+      </a>
+    </h1>
+
+    <span class="post-date">21 Sep 2020</span>
+     |
+    
+    <a href="/blog/tags/#django" class="post-tag">django</a>
+    
+    <a href="/blog/tags/#python" class="post-tag">python</a>
+    
+    <a href="/blog/tags/#drf" class="post-tag">drf</a>
+    
+    <a href="/blog/tags/#conditions" class="post-tag">conditions</a>
+    
+    
+
+    <article>
+      <p>장고에서는 <code class="language-plaintext highlighter-rouge">Q</code> 를 통해 쿼리문에서 조건식을 표현할 수 있다.</p>
+
+<p>iterators와 함께 사용가능한 방법은 크게 3가지가 있다.</p>
+
+<ol>
+  <li>오퍼레이터 <code class="language-plaintext highlighter-rouge">|=</code> 을 사용하는 방법</li>
+  <li><code class="language-plaintext highlighter-rouge">Q.add()</code> 를 사용하는 방법</li>
+  <li><code class="language-plaintext highlighter-rouge">reduce</code> 를 사용하는 방법</li>
+</ol>
+
+<h2 id="을-사용하여-조건식-생성"><code class="language-plaintext highlighter-rouge">|=</code> 을 사용하여 조건식 생성</h2>
+
+<p>가장 보기 쉽고 편한 방법이다.</p>
+
+<p>먼저, python의 제너레이터를 사용하여 원하는 조건의 Q오브젝트들을 리스트로 형성한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">Q</span>
+
+<span class="n">conditions</span> <span class="o">=</span> <span class="p">[</span><span class="n">Q</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s">f'</span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s">'</span><span class="p">:</span> <span class="n">field_value</span><span class="p">})</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">]</span>
+<span class="c1"># 여기서 **{x:y}는 참조를 넘겨주기 위함인데 이는 Q(field=field_value)와 동일하게 작동된다.
+</span></code></pre></div></div>
+
+<p>다음으로 최초의 Q를 가진 변수를 생성하기 위해 <code class="language-plaintext highlighter-rouge">conditions</code> 에서 <code class="language-plaintext highlighter-rouge">pop()</code> 으로 조건하나를 빼온다. (이는 for문에서 or연결을 시키기 위함이다.)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query_filter</span> <span class="o">=</span> <span class="n">conditions</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>다음으로 for문으로 <code class="language-plaintext highlighter-rouge">or</code>  연산을 시킨뒤 이를 필터에 작성하면 복수의 조건식을 만족하는 필터가 작동된다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">condition</span> <span class="ow">in</span> <span class="n">conditions</span><span class="p">:</span>
+	<span class="n">query_filter</span> <span class="o">|=</span> <span class="n">condition</span>  <span class="c1"># Q(1) | Q(2) | Q(3) | Q(4) ...
+</span>
+<span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">query_filter</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>개인적으로 이 방법이 가장 보기도 편하고 적용시키기도 좋은 방법이었다.</p>
+
+<h2 id="qadd를-사용하여-조건식-생성"><code class="language-plaintext highlighter-rouge">Q.add()</code> 를 사용하여 조건식 생성</h2>
+
+<p>이 방법은 Q모듈 자체에서 제공하는 기능인데 조건을 더해주는 기능을 가지고 있다.  하지만 처음부터 초기의 Q를 따로 설정해야하기도 하고 어차피 for문을 사용해야 하는데 더 간단하게 <code class="language-plaintext highlighter-rouge">|=</code> 연산자를 사용하는 방법이 있으므로 이 방법은 조금 더 복잡한 조건식을 만들때 유용할거라고 생각된다.</p>
+
+<p>Ex) OR( AND(c1,c2), AND(c3,c4),OR(c5,c6) ) 와 같이 OR, AND가 복합적으로 사용되는 경우.</p>
+
+<p>이것도 간단하게 Q() 오브젝트를 가진 초기 변수를 설정해준다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">conditions</span> <span class="o">=</span> <span class="n">Q</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="n">field_value</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>다음으로 for문을 사용해서 add를 누적시켜준다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">condition_items</span><span class="p">:</span>
+	<span class="n">conditions</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">Q</span><span class="p">.</span><span class="n">OR</span><span class="p">)</span> <span class="c1"># Q.OR로 조건을 지정해준다.
+</span>
+<span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">conditions</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="reduce와-operatoror_를--사용한-방법"><code class="language-plaintext highlighter-rouge">reduce()</code> 와 <code class="language-plaintext highlighter-rouge">operator.or_</code> 를  사용한 방법</h2>
+
+<p>만약 for문이 많을경우 보기 더러워지고 좀 더 간단히 표현하고 싶을 때 이 방법을 사용하면 가장 짧게 코드로 작성이 가능하다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">or_</span>
+<span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">Q</span>
+
+<span class="n">conditions</span> <span class="o">=</span> <span class="p">[</span><span class="n">Q</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">Q</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">Q</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">Q</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="p">...]</span>
+<span class="n">filters</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">or_</span><span class="p">,</span> <span class="p">(</span><span class="n">condition</span> <span class="k">for</span> <span class="n">condition</span> <span class="ow">in</span> <span class="n">conditions</span><span class="p">))</span>
+<span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">filters</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>이 방법은 단순하게 <code class="language-plaintext highlighter-rouge">for + |=</code> 를 사용하여 만든 방법을 reduce를 통해서 조금 더 짧게 만든 식이다.</p>
+
+<h2 id="적용-검색필터-만들기drf">적용 : 검색필터 만들기(drf)</h2>
+
+<p>만약 게시판에서 검색기능을 구현할때 <code class="language-plaintext highlighter-rouge">body|title|tags</code>	중에 하나를 선택하거나 중복선택을 통해 검색하는 경우 보통 아래와 같이 구현하는 경우가 더러 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">search_type</span> <span class="o">==</span> <span class="s">'all'</span><span class="p">:</span>
+	<span class="nb">filter</span> <span class="o">=</span> <span class="p">(</span><span class="n">Q</span><span class="p">(</span><span class="n">body__icontains</span><span class="o">=</span><span class="n">search_q</span><span class="p">)</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">title__icontains</span><span class="o">=</span><span class="n">search_q</span><span class="p">)</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">tags_icontains</span><span class="o">=</span><span class="n">search_q</span><span class="p">))</span>
+<span class="k">elif</span> <span class="n">search_type</span> <span class="o">==</span> <span class="s">'body'</span><span class="p">:</span>
+	<span class="nb">filter</span> <span class="o">=</span> <span class="n">Q</span><span class="p">(</span><span class="n">body__icontains</span><span class="o">=</span><span class="n">search_q</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">search_type</span> <span class="o">==</span> <span class="s">'title'</span><span class="p">:</span>
+	<span class="p">...</span>
+	<span class="p">...</span>
+	<span class="p">...</span>
+</code></pre></div></div>
+
+<p>이렇게 if ~ elif문으로 구현하게 되면 줄수도 길어지고 무었보다 검색할 타입의 수가 많아질때마다 코드를 수정해줘야 한다.</p>
+
+<p>이때, list를 조건식으로 변경해주는 위의 방법들을 사용하면 아래와 같이 간단하게 구현 가능해지며 type의 수가 많아져도 따로 수정할 코드가 많이 없다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		<span class="n">search_q</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">GET</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'search_q'</span><span class="p">)</span>
+        <span class="n">search_types</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">GET</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'search_type'</span><span class="p">).</span><span class="n">split</span><span class="p">(</span><span class="s">'|'</span><span class="p">)</span>  <span class="c1"># title|body|tags
+</span>        <span class="n">allowed_search_types</span> <span class="o">=</span> <span class="p">[</span><span class="s">'title'</span><span class="p">,</span> <span class="s">'body'</span><span class="p">,</span> <span class="s">'tags'</span><span class="p">]</span>
+        <span class="n">conditions</span> <span class="o">=</span> <span class="p">[</span><span class="n">Q</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s">f'</span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s">__icontains'</span><span class="p">:</span> <span class="n">search_q</span><span class="p">})</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">search_types</span>
+                        <span class="k">if</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">allowed_search_types</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">conditions</span><span class="p">:</span>
+            <span class="n">filters</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">or_</span><span class="p">,</span> <span class="p">(</span><span class="n">condition</span> <span class="k">for</span> <span class="n">condition</span> <span class="ow">in</span> <span class="n">conditions</span><span class="p">))</span>
+            <span class="n">queryset</span> <span class="o">=</span> <span class="n">query</span><span class="p">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">filters</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">queryset</span> <span class="o">=</span> <span class="n">query</span>
+</code></pre></div></div>
+
+      <article>
+        <div class="post-more">
+          
+          <a href="/django/2020/09/21/django-query-with-multiple-q-conditions-with-iterators/#disqus_thread"> <i class="fa fa-comments"
+              aria-hidden="true"></i>Comment</a>&nbsp;
+          
+          <a href="/django/2020/09/21/django-query-with-multiple-q-conditions-with-iterators/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+        </div>
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+  <a class="pagination-item older" href="/blog/page4">Older</a>
+  
+  
+  
+  <a class="pagination-item newer" href="/blog/page2">Newer</a>
+  
+  
+</div>
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if (target === toggle) {
+            checkbox.checked = !checkbox.checked;
+            e.preventDefault();
+          } else if (checkbox.checked && !sidebar.contains(target)) {
+            /* click outside the sidebar when sidebar is open */
+            checkbox.checked = false;
+          }
+        }, false);
+      })(document);
+    </script>
+    
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-00000000-1', 'auto');
+ga('send', 'pageview');
+    </script>
+    
+  </body>
+  
+  <script id="dsq-count-scr" src="//leesh0blog.disqus.com/count.js" async></script>
+  
+</html>

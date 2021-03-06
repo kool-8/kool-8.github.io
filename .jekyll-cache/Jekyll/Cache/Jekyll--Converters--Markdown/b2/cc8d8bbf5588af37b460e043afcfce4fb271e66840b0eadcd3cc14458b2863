@@ -1,0 +1,102 @@
+I"
+1<p>장고에서는 <code class="language-plaintext highlighter-rouge">Q</code> 를 통해 쿼리문에서 조건식을 표현할 수 있다.</p>
+
+<p>iterators와 함께 사용가능한 방법은 크게 3가지가 있다.</p>
+
+<ol>
+  <li>오퍼레이터 <code class="language-plaintext highlighter-rouge">|=</code> 을 사용하는 방법</li>
+  <li><code class="language-plaintext highlighter-rouge">Q.add()</code> 를 사용하는 방법</li>
+  <li><code class="language-plaintext highlighter-rouge">reduce</code> 를 사용하는 방법</li>
+</ol>
+
+<h2 id="을-사용하여-조건식-생성"><code class="language-plaintext highlighter-rouge">|=</code> 을 사용하여 조건식 생성</h2>
+
+<p>가장 보기 쉽고 편한 방법이다.</p>
+
+<p>먼저, python의 제너레이터를 사용하여 원하는 조건의 Q오브젝트들을 리스트로 형성한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">Q</span>
+
+<span class="n">conditions</span> <span class="o">=</span> <span class="p">[</span><span class="n">Q</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s">f'</span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s">'</span><span class="p">:</span> <span class="n">field_value</span><span class="p">})</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">]</span>
+<span class="c1"># 여기서 **{x:y}는 참조를 넘겨주기 위함인데 이는 Q(field=field_value)와 동일하게 작동된다.
+</span></code></pre></div></div>
+
+<p>다음으로 최초의 Q를 가진 변수를 생성하기 위해 <code class="language-plaintext highlighter-rouge">conditions</code> 에서 <code class="language-plaintext highlighter-rouge">pop()</code> 으로 조건하나를 빼온다. (이는 for문에서 or연결을 시키기 위함이다.)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query_filter</span> <span class="o">=</span> <span class="n">conditions</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>다음으로 for문으로 <code class="language-plaintext highlighter-rouge">or</code>  연산을 시킨뒤 이를 필터에 작성하면 복수의 조건식을 만족하는 필터가 작동된다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">condition</span> <span class="ow">in</span> <span class="n">conditions</span><span class="p">:</span>
+	<span class="n">query_filter</span> <span class="o">|=</span> <span class="n">condition</span>  <span class="c1"># Q(1) | Q(2) | Q(3) | Q(4) ...
+</span>
+<span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">query_filter</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>개인적으로 이 방법이 가장 보기도 편하고 적용시키기도 좋은 방법이었다.</p>
+
+<h2 id="qadd를-사용하여-조건식-생성"><code class="language-plaintext highlighter-rouge">Q.add()</code> 를 사용하여 조건식 생성</h2>
+
+<p>이 방법은 Q모듈 자체에서 제공하는 기능인데 조건을 더해주는 기능을 가지고 있다.  하지만 처음부터 초기의 Q를 따로 설정해야하기도 하고 어차피 for문을 사용해야 하는데 더 간단하게 <code class="language-plaintext highlighter-rouge">|=</code> 연산자를 사용하는 방법이 있으므로 이 방법은 조금 더 복잡한 조건식을 만들때 유용할거라고 생각된다.</p>
+
+<p>Ex) OR( AND(c1,c2), AND(c3,c4),OR(c5,c6) ) 와 같이 OR, AND가 복합적으로 사용되는 경우.</p>
+
+<p>이것도 간단하게 Q() 오브젝트를 가진 초기 변수를 설정해준다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">conditions</span> <span class="o">=</span> <span class="n">Q</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="n">field_value</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>다음으로 for문을 사용해서 add를 누적시켜준다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">condition_items</span><span class="p">:</span>
+	<span class="n">conditions</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">Q</span><span class="p">.</span><span class="n">OR</span><span class="p">)</span> <span class="c1"># Q.OR로 조건을 지정해준다.
+</span>
+<span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">conditions</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="reduce와-operatoror_를--사용한-방법"><code class="language-plaintext highlighter-rouge">reduce()</code> 와 <code class="language-plaintext highlighter-rouge">operator.or_</code> 를  사용한 방법</h2>
+
+<p>만약 for문이 많을경우 보기 더러워지고 좀 더 간단히 표현하고 싶을 때 이 방법을 사용하면 가장 짧게 코드로 작성이 가능하다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">or_</span>
+<span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">Q</span>
+
+<span class="n">conditions</span> <span class="o">=</span> <span class="p">[</span><span class="n">Q</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">Q</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">Q</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">Q</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="p">...]</span>
+<span class="n">filters</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">or_</span><span class="p">,</span> <span class="p">(</span><span class="n">condition</span> <span class="k">for</span> <span class="n">condition</span> <span class="ow">in</span> <span class="n">conditions</span><span class="p">))</span>
+<span class="n">Model</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">filters</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>이 방법은 단순하게 <code class="language-plaintext highlighter-rouge">for + |=</code> 를 사용하여 만든 방법을 reduce를 통해서 조금 더 짧게 만든 식이다.</p>
+
+<h2 id="적용-검색필터-만들기drf">적용 : 검색필터 만들기(drf)</h2>
+
+<p>만약 게시판에서 검색기능을 구현할때 <code class="language-plaintext highlighter-rouge">body|title|tags</code>	중에 하나를 선택하거나 중복선택을 통해 검색하는 경우 보통 아래와 같이 구현하는 경우가 더러 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">search_type</span> <span class="o">==</span> <span class="s">'all'</span><span class="p">:</span>
+	<span class="nb">filter</span> <span class="o">=</span> <span class="p">(</span><span class="n">Q</span><span class="p">(</span><span class="n">body__icontains</span><span class="o">=</span><span class="n">search_q</span><span class="p">)</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">title__icontains</span><span class="o">=</span><span class="n">search_q</span><span class="p">)</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">tags_icontains</span><span class="o">=</span><span class="n">search_q</span><span class="p">))</span>
+<span class="k">elif</span> <span class="n">search_type</span> <span class="o">==</span> <span class="s">'body'</span><span class="p">:</span>
+	<span class="nb">filter</span> <span class="o">=</span> <span class="n">Q</span><span class="p">(</span><span class="n">body__icontains</span><span class="o">=</span><span class="n">search_q</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">search_type</span> <span class="o">==</span> <span class="s">'title'</span><span class="p">:</span>
+	<span class="p">...</span>
+	<span class="p">...</span>
+	<span class="p">...</span>
+</code></pre></div></div>
+
+<p>이렇게 if ~ elif문으로 구현하게 되면 줄수도 길어지고 무었보다 검색할 타입의 수가 많아질때마다 코드를 수정해줘야 한다.</p>
+
+<p>이때, list를 조건식으로 변경해주는 위의 방법들을 사용하면 아래와 같이 간단하게 구현 가능해지며 type의 수가 많아져도 따로 수정할 코드가 많이 없다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		<span class="n">search_q</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">GET</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'search_q'</span><span class="p">)</span>
+        <span class="n">search_types</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">GET</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'search_type'</span><span class="p">).</span><span class="n">split</span><span class="p">(</span><span class="s">'|'</span><span class="p">)</span>  <span class="c1"># title|body|tags
+</span>        <span class="n">allowed_search_types</span> <span class="o">=</span> <span class="p">[</span><span class="s">'title'</span><span class="p">,</span> <span class="s">'body'</span><span class="p">,</span> <span class="s">'tags'</span><span class="p">]</span>
+        <span class="n">conditions</span> <span class="o">=</span> <span class="p">[</span><span class="n">Q</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s">f'</span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s">__icontains'</span><span class="p">:</span> <span class="n">search_q</span><span class="p">})</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">search_types</span>
+                        <span class="k">if</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">allowed_search_types</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">conditions</span><span class="p">:</span>
+            <span class="n">filters</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">or_</span><span class="p">,</span> <span class="p">(</span><span class="n">condition</span> <span class="k">for</span> <span class="n">condition</span> <span class="ow">in</span> <span class="n">conditions</span><span class="p">))</span>
+            <span class="n">queryset</span> <span class="o">=</span> <span class="n">query</span><span class="p">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">filters</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">queryset</span> <span class="o">=</span> <span class="n">query</span>
+</code></pre></div></div>
+:ET

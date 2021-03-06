@@ -11,7 +11,7 @@
 
   <title>
     
-      Blog &middot; 記録
+      Blog &middot; Biary
     
   </title>
 
@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 
   <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/favicon.png">
   <link rel="shortcut icon" href="/public/favicon.ico">
 
   <!-- RSS -->
@@ -52,21 +52,13 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
         </a>
       </div>
       <div class="sidebar-personal-info-section">
-        <p>Wannabe <strong>Gopher, Pythonist, Security Engineer, BackEnd </strong>Etc..</p>
+        <p>interested in BlockChain, Go, Backend</p>
       </div>
       
       
       
       <div class="sidebar-personal-info-section">
         <p> Follow me:
-          
-          
-          
-          <a href="https://www.linkedin.com/in/lizhihao">
-            <i class="fa fa-linkedin" aria-hidden="true"></i>
-          </a>
-          
-          |
           
           
           
@@ -86,7 +78,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
           
           
           
-          <a href="http://www.google.com/recaptcha/mailhide/d?k=01I3lZFiZYng9N3QxYEtsDaQ==&c=31wAnZkuKqcG0ATAqJN8Z3ln5kkYLA9TwkGc-IbygpM=">
+          <a href="notedev.jp@gmail.com">
             <i class="fa fa-envelope" aria-hidden="true"></i>
           </a>
           
@@ -131,6 +123,16 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
         href="/blog/categories/#game" class="post-tag">
         <i class="fa fa-terminal" aria-hidden="true"></i> GAME</a>
       
+
+      <a class="sidebar-nav-item sidebar-nav-item-sub "
+        href="/blog/categories/#django" class="post-tag">
+        <i class="fa fa-terminal" aria-hidden="true"></i> Django</a>
+      
+
+      <a class="sidebar-nav-item sidebar-nav-item-sub "
+        href="/blog/categories/#error" class="post-tag">
+        <i class="fa fa-terminal" aria-hidden="true"></i> Error</a>
+      
       
     </span>
 
@@ -169,7 +171,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
   <div class="sidebar-item">
     <p>
-      &copy; 2020 Cubby. This work is liscensed under <a
+      &copy; 2021 Kool8. This work is liscensed under <a
         href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.
     </p>
   </div>
@@ -187,7 +189,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="/" title="Home" title="記録">
+            <a href="/" title="Home" title="Biary">
               <img class="masthead-logo" src="/public/img/run.gif"/>
             </a>
             <small>kool8</small>
@@ -200,35 +202,96 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   
   <div class="post">
     <h1 class="post-title" style="font-size:1.3rem">
-      <a href="/game/2013/12/31/whats-jekyll/">
-        What's Jekyll?
+      <a href="/2021/02/02/vscode-when-prettier-not-working-on-vscode/">
+        [vscode] when prettier not working on vscode
       </a>
     </h1>
 
-    <span class="post-date">31 Dec 2013</span>
+    <span class="post-date">02 Feb 2021</span>
      |
     
-    <a href="/blog/tags/#a" class="post-tag">A</a>
+    <a href="/blog/tags/#vscode" class="post-tag">vscode</a>
     
-    <a href="/blog/tags/#b" class="post-tag">B</a>
+    <a href="/blog/tags/#prettier" class="post-tag">prettier</a>
     
     
 
     <article>
-      <p><a href="http://jekyllrb.com">Jekyll</a> is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From <a href="https://github.com/mojombo/jekyll/blob/master/README.markdown">the project’s readme</a>:</p>
+      <p>Copy this and paste to your workspace .vscode / settings.json</p>
 
-<blockquote>
-  <p>Jekyll is a simple, blog aware, static site generator. It takes a template directory […] and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.</p>
-</blockquote>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "editor.formatOnSave": true,
+  "vetur.validation.template": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+</code></pre></div></div>
 
-<p>It’s an immensely useful tool and one we encourage you to use here with Lanyon.</p>
-
-<p>Find out more by <a href="https://github.com/mojombo/jekyll">visiting the project on GitHub</a>.</p>
 
       <article>
         <div class="post-more">
           
-          <a href="/game/2013/12/31/whats-jekyll/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+          <a href="/2021/02/02/vscode-when-prettier-not-working-on-vscode/#disqus_thread"> <i class="fa fa-comments"
+              aria-hidden="true"></i>Comment</a>&nbsp;
+          
+          <a href="/2021/02/02/vscode-when-prettier-not-working-on-vscode/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+        </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title" style="font-size:1.3rem">
+      <a href="/django/2020/09/30/django-typeerror-argument-of-type-posixpath-is-not-iterable/">
+        [django] TypeError: argument of type 'PosixPath' is not iterable 
+      </a>
+    </h1>
+
+    <span class="post-date">30 Sep 2020</span>
+     |
+    
+    <a href="/blog/tags/#django" class="post-tag">django</a>
+    
+    <a href="/blog/tags/#haystack" class="post-tag">haystack</a>
+    
+    <a href="/blog/tags/#drf" class="post-tag">drf</a>
+    
+    <a href="/blog/tags/#error" class="post-tag">error</a>
+    
+    
+
+    <article>
+      <p>해결방법:</p>
+
+<p>일반적으로 장고 프로젝트를 처음 생성했을 때, 해당 에러가 뜨는 경우가 가끔씩 있는데 간단하게 django setting을 조금 손봐주면 된다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'default'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'ENGINE'</span><span class="p">:</span> <span class="s">'django.db.backends.sqlite3'</span><span class="p">,</span>
+        <span class="s">'NAME'</span><span class="p">:</span> <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s">'db.sqlite3'</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이렇게 설정되어있는 데이터베이스를</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'default'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'ENGINE'</span><span class="p">:</span> <span class="s">'django.db.backends.sqlite3'</span><span class="p">,</span>
+        <span class="s">'NAME'</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s">'db.sqlite3'</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>요렇게 바꿔주면 정상작동한다.</p>
+
+      <article>
+        <div class="post-more">
+          
+          <a href="/django/2020/09/30/django-typeerror-argument-of-type-posixpath-is-not-iterable/#disqus_thread"> <i class="fa fa-comments"
+              aria-hidden="true"></i>Comment</a>&nbsp;
+          
+          <a href="/django/2020/09/30/django-typeerror-argument-of-type-posixpath-is-not-iterable/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
         </div>
   </div>
   
@@ -236,7 +299,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
 <div class="pagination">
   
-  <span class="pagination-item older">Older</span>
+  <a class="pagination-item older" href="/blog/page3">Older</a>
   
   
   
@@ -277,5 +340,7 @@ ga('send', 'pageview');
     </script>
     
   </body>
+  
+  <script id="dsq-count-scr" src="//leesh0blog.disqus.com/count.js" async></script>
   
 </html>

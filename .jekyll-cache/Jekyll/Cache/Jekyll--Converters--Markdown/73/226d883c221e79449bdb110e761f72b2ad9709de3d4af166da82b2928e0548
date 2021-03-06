@@ -1,0 +1,13 @@
+I"Œ<p>Copy this and paste to your workspace .vscode / settings.json</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "editor.formatOnSave": true,
+  "vetur.validation.template": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+</code></pre></div></div>
+
+:ET
