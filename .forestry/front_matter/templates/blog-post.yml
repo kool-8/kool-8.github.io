@@ -15,7 +15,7 @@ fields:
   label: tags
 - name: categories
   type: select
-  default: []
+  default: ''
   config:
     required: false
     options:
@@ -26,6 +26,8 @@ fields:
     - Js
     - Vue
     - TIL
+    - GoStudy
+    - Diary
     source:
       type: simple
       section: 
