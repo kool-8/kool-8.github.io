@@ -36,4 +36,5 @@ fields:
   label: categories
 pages:
 - _posts/2021-02-03-error-when-occured-less-loader-error-in-ant-design-vue.md
+- _posts/GOLANG/go-basic.md
 - _posts/GOLANG/golang-fibbonacci-for.md
